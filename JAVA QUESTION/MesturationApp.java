@@ -18,21 +18,21 @@ public class MesturationApp {
 	System.out.print("Enter how many days your period lasts (e.g 5): ");
 	int periodLength = input.nextInt();
 
+	MesturationAppFunction(lastPeriodDay, periodLength, cycleLength);
+
+
+}
+
+	
+
+
+	public static void MesturationAppFunction(int lastPeriodDay, int periodLength, int cycleLength) {
+
 	int nextPeriodDay = lastPeriodDay + cycleLength;
 
 	// you start counting from the first day of your period give it a day 1, to how many days to your cycle length(28 days)
 
 	
-	MesturationAppFunction(lastPeriodDay, periodLength, nextPeriodDay);
-
-
-}
-
-
-
-
-	public static void MesturationAppFunction(int lastPeriodDay, int periodLength, int nextPeriodDay) {
-
 	int ovulationDay = nextPeriodDay - 14; 
 
 	// ovulation usally occurs in 14 days before the next period and to get this ovulation count back ward from that your period to the number of 	days you get 14
