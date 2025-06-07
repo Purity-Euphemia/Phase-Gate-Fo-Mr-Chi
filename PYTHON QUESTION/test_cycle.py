@@ -16,4 +16,8 @@ class TestCycle(TestCase):
         expected = (40, 26, 24, 28, 21, 31)
         self.assertEqual(actual, expected)
 
-    
+    def test_that_function_rejects_invalid_last_period_day(self):
+        self.assertRaises(ValueError, cycle.calculate_menstrual_cycle, -1, 28)
+        self.assertRaises(ValueError, cycle.calculate_menstrual_cycle, 32, 28)
+
+   
