@@ -1,4 +1,7 @@
 def calculate_menstrual_cycle(last_period_day, cycle_length):
+    if last_period_day < 1 or last_period_day > 31:
+        raise ValueError("last_period_day must be between 1 and 31")
+    
 
     next_period = last_period_day + cycle_length
     ovulation = next_period - 14
