@@ -10,7 +10,7 @@ public class SampleCheckout {
 
 	
 	String allItems = "";
-	double subtotalallitems = 0;
+	double subtotalAllItems = 0;
 
 	while(true) {
 
@@ -20,8 +20,10 @@ public class SampleCheckout {
 	System.out.println("How many pieces?: ");
 	int quantity = input.nextInt();
 
+
+	
 	System.out.println("How many per unit?: ");
-	double price = input.nextDouble():
+	double price = input.nextDouble();
 	
 	// mulitiply quantity * per price to get the total price of all the item
 
@@ -34,8 +36,8 @@ public class SampleCheckout {
 	System.out.println("Add more item? (yes or no)");
 	String more = input.nextLine();
 
-	if (more.equals("no") || more.equals("No") || more.equals("NO")) {
-	break;
+	if (more.equalsIgnoreCase("no")) {
+		break;
 
 	}
 
@@ -52,25 +54,29 @@ public class SampleCheckout {
 
 	double vat = subtotalAllItems * 7.5 / 100;  //(VAT stands for value added tax)
 
-	double totalAmount = subtotalAllItems - discount + vat;
+	double Totalbill = subtotalAllItems - discount + vat;
 
 	
 	System.out.println("How much did the customer give you?");
 	double amountPaid = input.nextDouble();
 
-	double balance = amountPaid - totalAmount;
-
-	System.out.println
+	double balance = amountPaid - Totalbill;
 
 
 
-
-
-
-
-
-
-
+	System.out.println("\n================ INVOICE ================\n");
+	System.out.println("Customer Name: " + customerName);
+	System.out.println("Cashier Name: " + cashierName);
+	System.out.println("Items Bought:");
+	System.out.println(allItems);
+	System.out.println("Sub Total All Items: " + subtotalAllItems);
+	System.out.println("Discount: " + discount);
+	System.out.println("VAT: " + vat);
+	System.out.println("Total Bill: " + Totalbill);
+	System.out.println("Amount Paid: " + amountPaid);
+	System.out.println("Balance: " + balance);
+	System.out.println("\n=========================================\n");
+	System.out.println("THANKS YOU FOR YOUR PATRONGE");
 
 
 
