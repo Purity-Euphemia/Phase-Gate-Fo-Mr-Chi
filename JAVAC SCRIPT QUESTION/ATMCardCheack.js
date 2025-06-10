@@ -1,27 +1,27 @@
 function ATMCardCheack(array) {
-  let mastercard = {
-    valid: true,
-    issuer: "Mastercard",
+	let mastercard = {
+	valid: true,
+	issuer: "Mastercard",
+  };
+	
+	let discover = {
+    	valid: true,
+    	issuer: "Discover",
   };
 
-  let discover = {
-    valid: true,
-    issuer: "Discover",
+  	let AmericaExpress = {
+	valid: true,
+    	issuer: "American Express",
   };
 
-  let AmericaExpress = {
-    valid: true,
-    issuer: "American Express",
+  	let visa = {
+    	valid: true,
+    	issuer: "Visa",
   };
 
-  let visa = {
-    valid: true,
-    issuer: "Visa",
-  };
-
-  let invalid = {
-    valid: false,
-    issuer: "Invalid",
+  	let invalid = {
+    	valid: false,
+    	issuer: "Invalid",
   };
 
   
@@ -30,20 +30,20 @@ function ATMCardCheack(array) {
   let length = array.length;
 
   // Step 1 + 2: Double every second digit from the right and fix if needed
-  for (let i = length - 2; i >= 0; i -= 2) {
-    let digit = array[i];
-    let doubled = digit * 2;
+  for (let count = length - 2; count >= 0; count -= 2) {
+	let digit = array[count];
+    	let doubled = digit * 2;
 
-    if (doubled > 9) {
-	doubled = doubled - 9;
+    	if (doubled > 9) {
+		doubled = doubled - 9;
     }
 
-    totalStep2 += doubled;
+   	 totalStep2 += doubled;
   }
 
   // Step 3: Add the remaining digits (those not doubled)
-  for (let i = length - 1; i >= 0; i -= 2) {
-    totalStep3 += array[i];
+  for (let count = length - 1; count >= 0; count -= 2) {
+    	totalStep3 += array[count];
   }
 
  
@@ -52,17 +52,21 @@ function ATMCardCheack(array) {
   // Step 5: Check validity
   let isValid = total % 10 === 0;
 
-  if (!isValid) {
-    return invalid;
-  }
+  	if (!isValid) {
+    		return invalid;
+  	}
+	else {
+
 
  
-  if (array[0] === 5 && array.length === 16) return mastercard;
-  if (array[0] === 6 && array.length === 16) return discover;
-  if (array[0] === 3 && array[1] === 7 && array.length === 15) return AmericaExpress;
-  if (array[0] === 4 && (array.length === 13 || array.length === 16)) return visa;
+  		if (array[0] === 5 && array.length === 16) return mastercard;
+  		if (array[0] === 6 && array.length === 16) return discover;
+ 		if (array[0] === 3 && array[1] === 7 && array.length === 15) return AmericaExpress;
+  		if (array[0] === 4 && (array.length === 13 || array.length === 16)) return visa;
 
-  return valid;
+  	return valid;
+
+}
 }
 
 
