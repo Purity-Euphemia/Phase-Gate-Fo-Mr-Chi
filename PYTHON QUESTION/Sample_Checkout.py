@@ -64,7 +64,7 @@ while True:
 
 
 
-
+# you asked if you want to buy more then nothing happens
 
 
 
