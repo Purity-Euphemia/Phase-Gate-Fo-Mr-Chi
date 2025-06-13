@@ -44,3 +44,5 @@ def atm_card(card_number):
 
 card_number = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 4, 4, 4, 4]
 atm_card(card_number)
+
+# why is your card number a list ?
