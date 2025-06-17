@@ -3,18 +3,33 @@ print("LIST OF MENU FUNCTIONS")
 
 contacts = [] 
 
-
 while True:
-    print("""
+	print("""
 MENU
-    1. Add contact.
-    2. Remove contact.
-    3. Find contact by first name.
-    4. Find contact by last name.
-    5. Edit contact.
-    """)
+	1. Add contact.
+    	2. Remove contact.
+    	3. Find contact by first name.
+    	4. Find contact by last name.
+    	5. Edit contact.
 
-    choice = input('Enter your choice (1 to 5): ')
+    	""")
+	choice = input('Enter your choice (1 to 5): ')
 
-    if choice == "1":
-        name = input("Enter name: ")
+	if choice == "1":
+		print("ADD CONTACT")
+		name_first = input("Enter the first name name: ")
+		name_last = input("Enter the second name: ")
+		number = input("Enter the phone number: ")
+		contact = [name_first, name_second, number]
+		contacts.append(contact)
+		print("Contact successfully added")
+	
+	elif choice == "2":
+		print("REMOVE CONTACT")
+		name_to_remove = input("Enter name to remove: ")
+		removed = False
+		for contact in contacts:
+			
+				
+
+
