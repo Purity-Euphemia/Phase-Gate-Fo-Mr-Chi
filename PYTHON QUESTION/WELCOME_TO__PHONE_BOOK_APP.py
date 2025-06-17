@@ -17,10 +17,10 @@ MENU
 
 	if choice == "1":
 		print("ADD CONTACT")
-		name_first = input("Enter the first name name: ")
+		name_first = input("Enter the first name: ")
 		name_last = input("Enter the second name: ")
 		number = input("Enter the phone number: ")
-		contact = [name_first, name_second, number]
+		contact = [name_first, name_last, number]
 		contacts.append(contact)
 		print("Contact successfully added")
 	
@@ -29,6 +29,12 @@ MENU
 		name_to_remove = input("Enter name to remove: ")
 		removed = False
 		for contact in contacts:
+			if contact[0] == name_to_remove:
+				contacts.remove(contact)
+				print(contacts)
+				print("Contact removed")
+				removed = True
+				break
 			
 				
 
